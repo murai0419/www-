@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列の掛け算</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>配列の掛け算結果</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>配列 a の値</th>
+                <th>配列 b の値</th>
+                <th>計算</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>500</td>
+                <td>10</td>
+                <td><button onclick="multiply_0()">計算する</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>980</td>
+                <td>16</td>
+                <td><button onclick="multiply_1()">計算する</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1200</td>
+                <td>8</td>
+                <td><button onclick="multiply_2()">計算する</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let a = [500, 980, 1200];
+        let b = [10, 16, 8];
+
+        function multiply_0() {
+            let answer = a[0] * b[0];
+            alert("Index 0 の掛け算結果は: " + answer);
+        }
+
+        function multiply_1() {
+            let answer = a[1] * b[1];
+            alert("Index 1 の掛け算結果は: " + answer);
+        }
+
+        function multiply_2() {
+            let answer = a[2] * b[2];
+            alert("Index 2 の掛け算結果は: " + answer);
+        }
+    </script>
+
+</body>
+</html>
