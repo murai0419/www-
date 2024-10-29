@@ -6,16 +6,6 @@
     <title>要素の取得と内容の変更</title>
     <style>
 
-        .reservation {
-            text-align: left;
-            background-color: #fff;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            width: 300px;
-        }
-
-
         .status {
             font-size: 18px;
             color: red;
@@ -46,11 +36,9 @@
     </script>
 </head>
 <body>
-    <div class="reservation">
         <h1>座席の予約</h1>
         <div>東京会場 <span id="status" class="status">（予約受付中）</span></div>
         <button id="reserveButton" onclick="reserve()">予約する</button>
         <div id="thankYouMessage" class="thank-you"></div>
-    </div>
 </body>
 </html>
