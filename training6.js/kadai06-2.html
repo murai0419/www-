@@ -22,15 +22,15 @@
     <script>
         function reserve() {
             document.getElementById("status").innerText = "（予約済み）";
-            document.getElementById("reserveButton").style.display = "none";
-            document.getElementById("thankyouMessage").innerText = "ありがとうございました。";
+            document.getElementById("yoyakubutton").style.display = "none";
+            document.getElementById("thankyoumessage").innerText = "ありがとうございました。";
         }
     </script>
 </head>
 <body>
         <h1>座席の予約</h1>
         <div>東京会場 <span id="status" class="status">（予約受付中）</span></div>
-        <button id="reserveButton" onclick="reserve()">予約する</button>
-        <div id="thankyouMessage" class="thankyou"></div>
+        <button id="yoyakubutton" onclick="reserve()">予約する</button>
+        <div id="thankyoumessage" class="thankyou"></div>
 </body>
 </html>
