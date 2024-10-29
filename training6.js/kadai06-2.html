@@ -11,9 +11,10 @@
             font-weight: bold;
         }
 
-        .thank-you {
+        .thankyou {
             font-size: 16px;
             margin-top: 10px;
+            font-weight: bold;
         }
 
 
@@ -22,7 +23,7 @@
         function reserve() {
             document.getElementById("status").innerText = "（予約済み）";
             document.getElementById("reserveButton").style.display = "none";
-            document.getElementById("thankYouMessage").innerText = "ありがとうございました。";
+            document.getElementById("thankyouMessage").innerText = "ありがとうございました。";
         }
     </script>
 </head>
@@ -30,6 +31,6 @@
         <h1>座席の予約</h1>
         <div>東京会場 <span id="status" class="status">（予約受付中）</span></div>
         <button id="reserveButton" onclick="reserve()">予約する</button>
-        <div id="thankYouMessage" class="thank-you"></div>
+        <div id="thankyouMessage" class="thankyou"></div>
 </body>
 </html>
