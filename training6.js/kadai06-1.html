@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列の利用</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 24px;
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #000000;
+        }
+
+        th {
+            background-color: #f2a35e;
+            color: black;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+
+        button {
+            padding: 8px 16px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #fffdfd;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>利用料の計算</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>料金（a）</th>
+                <th>人数(b)</th>
+                <th>a×b</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td>500</td>
+                <td>10</td>
+                <td><button onclick="multiply_0()">利用料の合計</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>980</td>
+                <td>16</td>
+                <td><button onclick="multiply_1()">利用料の合計</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1200</td>
+                <td>8</td>
+                <td><button onclick="multiply_2()">利用料の合計</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        let a = [500, 980, 1200];
+        let b = [10, 16, 8];
+
+        function multiply(i) {
+            let answer = a[i] * b[i];
+            alert("料金は" + answer + "円です");
+        }
+
+
+        
+    </script>
+
+</body>
+</html>
