@@ -4,15 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>要素の取得と内容の変更</title>
-</head>
-<body>
-    <h1>座席の予約</h1>
-    <p>東京会場（予約受付中）</p>
-    <button onclick="yoyaku()">予約する</button>
-</body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .reservation {
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+        }
+
+        .thank-you {
+            font-size: 16px;
+            color: #28a745;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
     <script>
-        function yoyaku(){
-            
+        // ボタンをクリックしたときの処理
+        function reserve() {
+            // ステータスのテキストを「予約済み」に変更
+            document.getElementById("status").innerText = "（予約済み）";
+
+            // ボタンを非表示にし、「ありがとうございました」のメッセージを表示
+            document.getElementById("reserveButton").style.display = "none";
+            document.getElementById("thankYouMessage").innerText = "ありがとうございました。";
         }
     </script>
+</head>
+<body>
+    <div class="reservation">
+        <h1>座席の予約</h1>
+        <div>東京会場 <span id="status" class="status">（予約受付中）</span></div>
+        <button id="reserveButton" onclick="reserve()">予約する</button>
+        <div id="thankYouMessage" class="thank-you"></div>
+    </div>
+</body>
 </html>
