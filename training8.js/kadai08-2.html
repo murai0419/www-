@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>入場料の一覧</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #80bcb8;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>入場料の一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th> </th>
+                <th>大人</th>
+                <th>高校生</th>
+                <th>中学生</th>
+                <th>小学生</th>
+            </tr>
+        </thead>
+        <tbody id="priceTable">
+            <!-- JavaScriptで行を生成 -->
+        </tbody>
+    </table>
+
+    <script>
+        // 各人の料金データ
+        const prices = {
+            "大人": 800,
+            "高校生": 680,
+            "中学生": 450,
+            "小学生": 380
+        };
+
+        // 行を生成して挿入
+        const tableBody = document.getElementById('priceTable');
+        for (let i = 1; i <= 5; i++) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${i}人</td>
+                <td>${prices["大人"] * i}円</td>
+                <td>${prices["高校生"] * i}円</td>
+                <td>${prices["中学生"] * i}円</td>
+                <td>${prices["小学生"] * i}円</td>
+            `;
+            tableBody.appendChild(row);
+        }
+    </script>
+</body>
+</html>
