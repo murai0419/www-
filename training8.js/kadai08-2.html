@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>入場料の一覧</title>
+    <title>繰り返し処理</title>
     <style>
         table {
-            width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
+        td, th {
+            border: solid 1px #000000;
+            width: 40px;
+            padding: 5px;
             text-align: center;
         }
         th {
-            background-color: #80bcb8;
-            color: black;
+            background-color: #9cc;
         }
     </style>
 </head>
@@ -34,12 +32,10 @@
             </tr>
         </thead>
         <tbody id="priceTable">
-            <!-- JavaScriptで行を生成 -->
         </tbody>
     </table>
 
     <script>
-        // 各人の料金データ
         const prices = {
             "大人": 800,
             "高校生": 680,
@@ -47,7 +43,6 @@
             "小学生": 380
         };
 
-        // 行を生成して挿入
         const tableBody = document.getElementById('priceTable');
         for (let i = 1; i <= 5; i++) {
             const row = document.createElement('tr');
