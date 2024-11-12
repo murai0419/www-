@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要素の追加と削除</title>
+</head>
+<body>
+    <h1>写真の一覧</h1>
+    <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+    <button id="showPhotosButton">写真を表示</button>
+    <div id="photoContainer"></div>
+
+    <script>
+        document.getElementById('showPhotosButton').addEventListener('click', function() {
+            document.getElementById('photoContainer').insertAdjacentHTML('beforeend', `
+                <div class="photo-grid">
+                    <img src="photo_1.jpg" alt="Photo 1">
+                    <img src="photo_2.jpg" alt="Photo 2">
+                    <img src="photo_3.jpg" alt="Photo 3">
+                    <img src="photo_4.jpg" alt="Photo 4">
+                    <img src="photo_5.jpg" alt="Photo 5">
+                    <img src="photo_6.jpg" alt="Photo 6">
+                    <img src="photo_7.jpg" alt="Photo 7">
+                    <img src="photo_8.jpg" alt="Photo 8">
+                </div>
+            `);
+
+            this.remove();
+        });
+    </script>
+
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</body>
+</html>
