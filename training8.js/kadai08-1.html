@@ -8,13 +8,13 @@
 <body>
     <h1>写真の一覧</h1>
     <p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
-    <button id="showPhotosButton">写真を表示</button>
+    <button id="button">写真を表示</button>
     <div id="photoContainer"></div>
 
     <script>
-        document.getElementById('showPhotosButton').addEventListener('click', function() {
+        document.getElementById('button').addEventListener('click', function() {
             document.getElementById('photoContainer').insertAdjacentHTML('beforeend', `
-                <div class="photo-grid">
+                <div class="photo">
                     <img src="images/photo_1.jpg" alt="Photo 1">
                     <img src="images/photo_2.jpg" alt="Photo 2">
                     <img src="images/photo_3.jpg" alt="Photo 3">
