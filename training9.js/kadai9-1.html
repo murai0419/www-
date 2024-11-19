@@ -9,7 +9,20 @@
     <h1>問題</h1>
     <p>最も面積が大きい「県」は何県でしょう？</p>
     <button id="button">ヒントを見る</button>
-    <p>(注意)北海道は「県」ではありません。</p>
-    
+    <p id = "text"></p>
+    <script>
+        let clickcount = 0;
+
+       
+
+        if(clickcount == 0){
+            text.textContent = "(注意)北海道は「県」ではありません。";
+        }else if(clickcount == 1){
+            text.textContent = "東北地方にあります。";
+            button.textContent ="答えを見る";
+        }else if(clickcount == 2){
+            button.textContent = "答えは「岩手県」です。"
+        }
+    </script>
 </body>
 </html>
