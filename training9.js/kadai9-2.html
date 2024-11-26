@@ -11,13 +11,13 @@
     <button id="button">ヒントを見る</button>
     <p id="text">(注意)北海道は「県」ではありません。</p>
     <script>
-        let clickCount = 0; // クリック回数をカウント
+        let clickCount = 0;
 
         const button = document.getElementById('button');
         const text = document.getElementById('text');
 
         button.addEventListener('click', () => {
-            clickCount++; // クリック回数を増加
+            clickCount++; 
 
             switch (clickCount) {
                 case 1:
@@ -26,7 +26,7 @@
                     break;
                 case 2:
                     text.textContent = "答えは「岩手県」です。";
-                    button.disabled = true; // ボタンを無効化
+                    button.disabled = true;
                     break;
                 default:
                     break;
