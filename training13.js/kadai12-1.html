@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>n～mで割り切れる数字</title>
+    <title>数値の入力とエラー処理</title>
 </head>
+<style>
+    #result{
+        width: 500px;
+        padding: 15px;
+        margin: 25px 0px;
+        background-color: #ffcc99;
+    }
+</style>
 <body>
     <h1>n～mで割り切れる数字</h1>
     <p>1～10の好きな範囲で割り切れる最小の数値をJavaScriptで求めます。</p>
     <button onclick="calculate()">範囲を指定</button>
-    <div id="result" style="background-color: #ffcc99; padding: 10px; margin-top: 10px;">
-        ここに結果が表示されます。
-    </div>
+    <div id="result">ここに結果が表示されます。</div>
 
     <script>
         function calculate() {
-            // ユーザー入力：範囲の最小値と最大値
             let min = prompt("範囲の最小値を1～10で入力してください");
             let max = prompt("範囲の最大値を1～10で入力してください");
 
-            // 入力値が数値か確認、エラーハンドリング
-            if (!min || !max || isNaN(min) || isNaN(max)) {
+            if (!min || !max || isNaN(min) || isNaN(max) || min < 1 || max > 10 || min > max) {
                 alert("正しい数値を入力してください。");
                 return;
             }
@@ -28,23 +32,14 @@
             min = parseInt(min);
             max = parseInt(max);
 
-            // 範囲チェック
-            if (min < 1 || max > 10 || min > max) {
-                alert("範囲は1～10の間で、最小値が最大値以下になるように設定してください。");
-                return;
-            }
-
-            // 最小公倍数（LCM）を求める関数
             const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
             const lcm = (a, b) => (a * b) / gcd(a, b);
 
-            // minからmaxまでの最小公倍数を計算
             let result = min;
             for (let i = min + 1; i <= max; i++) {
                 result = lcm(result, i);
             }
 
-            // 結果表示
             document.getElementById("result").innerText = `${min}～${max}で割り切れる最小の数値は${result}です。`;
         }
     </script>
