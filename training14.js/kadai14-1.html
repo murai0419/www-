@@ -13,6 +13,7 @@
         #result {
             border: 1px solid #000;
             padding: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -33,12 +34,9 @@
     <div id="result">ここにHTMLが表示されます。</div>
 
     <script>
-        // ボタンがクリックされたときにHTMLを表示する処理
         document.getElementById('showHtml').addEventListener('click', function() {
-            // 対象のボックス内のHTMLを取得
             const content = document.getElementById('content').innerHTML;
 
-            // 結果エリアに表示
             document.getElementById('result').textContent = content;
         });
     </script>
